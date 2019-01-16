@@ -1,16 +1,19 @@
 import React from 'react';
 
-function CharComponent() {
+function CharComponent(props) {
     const style = {
         display: 'inline-block',
-        padding: '16px',
+        padding: '0 16px',
         textAlign: 'center',
         margin: '16px',
-        border: '2px solid black'
+        border: '4px solid black',
+        fontWeight: 'bold',
+        textTransform: 'uppercase',
+        color: 'red'
     }
     return (
         <div style={style}>
-            <p>CharComponent</p>
+            <p>{props.character}</p>
         </div>
     )
 }
