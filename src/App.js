@@ -14,9 +14,20 @@ class App extends Component {
     this.setState({ inputText: text })
   }
 
+  deleteCharFunc = (index) => {
+    const enteredText = this.state.inputText.split('');
+    enteredText.splice(index, 1);
+    const updatedText = enteredText.join('');
+    this.setState({ inputText: updatedText});
+  }
+ 
   render() {
-    const char = this.state.inputText.split('').map(ch => {
-      return <CharComponent character={ch} />
+    const char = this.state.inputText.split('').map((ch, index) => {
+      return <CharComponent 
+      character={ch} 
+      key={index} 
+      clicked={() => this.deleteCharFunc(index)}
+      />
     });
 
     return (

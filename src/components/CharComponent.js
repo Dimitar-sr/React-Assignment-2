@@ -12,7 +12,7 @@ function CharComponent(props) {
         color: 'red'
     }
     return (
-        <div style={style}>
+        <div style={style} onClick={props.clicked}>
             <p>{props.character}</p>
         </div>
     )
